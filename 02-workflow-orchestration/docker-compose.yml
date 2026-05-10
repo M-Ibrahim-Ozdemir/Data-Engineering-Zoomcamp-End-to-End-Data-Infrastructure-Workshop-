@@ -57,13 +57,10 @@ services:
       - kestra_data:/app/storage
       - /var/run/docker.sock:/var/run/docker.sock
       - kestra_tmp:/tmp/kestra-wd
-      # 1. BAĞLANTI: Lokaldeki JSON dosyasını içeri veriyoruz (Gizli dosya dışarıda kalıyor)
       - ./google_creds.json:/app/google_creds.json
-      # 2. BAĞLANTI: Terminaldeki gcloud yetkisini (ADC) içeriye mühürledik
       - /home/codespace/.config/gcloud:/root/.config/gcloud
     environment:
-      # MUHAMMET DİKKAT: Buradaki SECRET_GCP_CREDS satırını, 
-      # sızıntıyı önlemek için sadece dosya yolunu gösterecek şekilde bıraktık.
+      # SADECE YOL: GitHub'da görünse de bir risk taşımaz.
       SECRET_GCP_CREDS: "/app/google_creds.json"
       KESTRA_CONFIGURATION: |
         datasources:

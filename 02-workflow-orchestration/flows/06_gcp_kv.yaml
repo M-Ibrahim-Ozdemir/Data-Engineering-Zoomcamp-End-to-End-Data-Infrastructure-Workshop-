@@ -30,6 +30,5 @@ tasks:
     type: io.kestra.plugin.core.kv.Set
     key: GCP_CREDS
     kvType: STRING
-    # MUHAMMET DİKKAT: Buraya artık JSON yapıştırmıyoruz!
-    # Docker ile içeri bağladığımız dosyanın yolunu veriyoruz.
+    # GİZLİ ANAHTAR YOK: Sadece Docker içindeki dosya yolunu gösteriyoruz.
     value: "/app/google_creds.json"
