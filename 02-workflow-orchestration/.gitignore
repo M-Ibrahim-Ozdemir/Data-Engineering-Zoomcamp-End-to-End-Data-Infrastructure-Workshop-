@@ -1,0 +1,15 @@
+# Google Cloud Anahtarları
+*.json
+google_creds.json
+
+# Docker Verileri
+.data/
+ny_taxi_postgres_data/
+kestra_postgres_data/
+kestra_data/
+kestra_tmp/
+
+# Python ve Çevre Dosyaları
+__pycache__/
+.venv/
+.env

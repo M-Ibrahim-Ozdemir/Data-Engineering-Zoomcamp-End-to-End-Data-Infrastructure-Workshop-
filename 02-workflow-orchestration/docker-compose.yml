@@ -7,11 +7,10 @@ volumes:
     driver: local
   kestra_tmp:
     driver: local
-  pgadmin_data: # Bunu da ekleyelim ki pgadmin ayarların gitmesin
+  pgadmin_data:
     driver: local
 
 services:
-  # Veri tabanımız (Taksi Verileri)
   pgdatabase:
     image: postgres:17
     environment:
@@ -23,7 +22,6 @@ services:
     volumes:
       - ny_taxi_postgres_data:/var/lib/postgresql/data
 
-  # Veritabanı Arayüzü
   pgadmin:
     image: dpage/pgadmin4
     environment:
@@ -36,7 +34,6 @@ services:
     depends_on:
       - pgdatabase
 
-  # Kestra'nın İç Veritabanı
   kestra_postgres:
     image: postgres:17
     volumes:
@@ -51,7 +48,6 @@ services:
       timeout: 10s
       retries: 10
 
-  # Kestra Ana Servis
   kestra:
     image: kestra/kestra:v1.1
     pull_policy: always
@@ -61,6 +57,10 @@ services:
       - kestra_data:/app/storage
       - /var/run/docker.sock:/var/run/docker.sock
       - kestra_tmp:/tmp/kestra-wd
+      # 1. BAĞLANTI: Lokaldeki JSON dosyasını içeri veriyoruz
+      - ./google_creds.json:/app/google_creds.json
+      # 2. BAĞLANTI: Terminaldeki gcloud yetkisini (ADC) içeriye mühürledik
+      - /home/codespace/.config/gcloud:/root/.config/gcloud
     environment:
       KESTRA_CONFIGURATION: |
         datasources:
@@ -91,4 +91,4 @@ services:
       - "8081:8081"
     depends_on:
       kestra_postgres:
-        condition: service_healthy # Started yerine Healthy dedik ki DB tam hazır olsun
+        condition: service_healthy

@@ -1,0 +1,34 @@
+id: 06_gcp_kv
+namespace: zoomcamp
+
+tasks:
+  - id: gcp_project_id
+    type: io.kestra.plugin.core.kv.Set
+    key: GCP_PROJECT_ID
+    kvType: STRING
+    value: zoomcamp-kestra-cloud
+
+  - id: gcp_location
+    type: io.kestra.plugin.core.kv.Set
+    key: GCP_LOCATION
+    kvType: STRING
+    value: europe-west3
+
+  - id: gcp_bucket_name
+    type: io.kestra.plugin.core.kv.Set
+    key: GCP_BUCKET_NAME
+    kvType: STRING
+    value: muhammet-ibrahim-zoomcamp-kestra-bucket
+
+  - id: gcp_dataset
+    type: io.kestra.plugin.core.kv.Set
+    key: GCP_DATASET
+    kvType: STRING
+    value: zoomcamp
+
+  - id: gcp_creds
+    type: io.kestra.plugin.core.kv.Set
+    key: GCP_CREDS
+    kvType: STRING
+    # BURASI EN KRİTİK YER: JSON metnini tek tırnak içinde buraya gömdük.
+    value: '{"type": "service_account", "project_id": "zoomcamp-kestra-cloud", "private_key_id": "9de4497ae92cd59d5378251720199150386c3baa", "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC0apMYrPHg2Q6z\neOhELBbe0TlwhtDlsMAyp9rgBqKRgr5XWI4HStAQAUNY2Yjifu7EeUfjCfJKQeRV\n0qNsS0ZuQ8G/ESiqWawLCkN/7HsaCD/dMoDRJFxWPSDDZ3UP8eLdguqVUc0ZX3Wm\nKGRtCZ4a3wJ+oJPWN/8APvqDFAifgXpFbiHEwcaYQDKojjc8EVpry32fOoJcpyJU\ntnso9OVUhlYWhcpbIQRoodOkPhgmZlB9B8HNHdxcZRPCpBE+ZtfhQTXTCcT+xlSr\nmQ08g30FHmGd54V7zXCStpddyD3ykUKeRPNEhX/ei4K5sZsJ+9Vz2uYbzEgom+44\n3iSub/lBAgMBAAECggEAAj3mpnRf8CwnSzRs76ur9DRlqCnjMK72SOzaNs1bTddB\n5ulCsMlRmfjPi8Qed+jFjhE/GwWEpk7Au+6lVWUvLqOitbVsh8cb6MJVq9JKFm0A\nwOaJuGuRFojdelMbzq0h7WBlCoJi6+JCXqRm6M5RQbaIoA7eDmfpSCkoLQq5t5Rn\nmThbWQFBVEaj6lWWYXJTypIWIHySu7zitJ7SCxw+DOAm9QlsVoFRSsyzg/Ii0WR5\n2r7AB+CBeusE8BlbeUkcSyGpgpnuW5wA0JVlWFDnGrg0GztDU0Yi2Km11RXYR7vk\nhJrmnRCNMqMCMkeOsgkRhLvHUPRD+fA7g+KKr2ZgYQKBgQDkAdrRHhUUgCs0bQ8i\nPBQZqt6r+s7DAMxYS1Ph6Eckh4PcJnI89tnEJSiBY//g2hG17/E29uLqk1MnWchr\n+yiFLbMDb0ON4e/QukSKQPLTsnQ4Rjbzx/qEOLj9slz4X1cwgrNUQDNHg0zBlgE1\nE40NTPcuzGyymjErBzn76+0YIQKBgQDKkPZT/EvnehqwkqwntCcHHp/L83CotxxD\baElEWUiPvOx4lxO05Ayrfx9GwMZ/BDH3iu5aT4fihlnyiElaMiMpSDaHj1kPZXU\nV+dSfocWqdBIn1tHuhqKaW+CaXmE9BrC8BqnfG9Le7UB8f0reL3s8hJLhKvteYZa\nRweQgiA9IQKBgGuvFJE/C+Wqwrz35PXeOgAFWzUONyiR7/CjYvKGqVLvTa9j2QBB\n9YdVpVO2ztp7I3Ix6FJ1N6Zh/hvPo4CcFf8QHkO5AMa5tnF2B3jkQ8sHtSv+vWVV\nRVO9FmF7I72KCbu3fsqDp7RWpqGnHtraaPunJfbMRWn0uNQBjbkVK90BAoGAXs5k\nC8DMgcU7UqMDIf4GOiXSInGIq94vwzs/LYsrq1CNXBcWnuoT1jRqNN98nx/Ddtf7\n3OZt5fMLmvEWfFzDaFgsvQlkMFNGmcCeipSfgzLtQeAbp8FphJh+USoubtSU5eHc\nh8EMkeaPPB7XIA59zbUqbN/mW9oB0KTn3HGaxyECgYBpd7jS82jASsNX907jSUGt\nQFedqV5V+wlIoK6fNkaJNTQxohl08MT/LQqKL4mc5jzaWrPH7a/nAEMArX+YThzt\n5mdJ75GJffPI+Gsv60u3f2UxjL7no4mOiJEz2PBkXTXXxLTemF84IK///SZcNIvb\nN7fuiJ1E7qmhPo+fqE6FWg==\n-----END PRIVATE KEY-----\n", "client_email": "workflow-zoomcamp@zoomcamp-kestra-cloud.iam.gserviceaccount.com", "client_id": "102695180622393095053"}'
