@@ -12,4 +12,5 @@ kestra_tmp/
 # Python ve Çevre Dosyaları
 __pycache__/
 .venv/
-.env
+.envgoogle_creds.json
+*.json
